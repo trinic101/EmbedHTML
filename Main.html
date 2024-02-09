@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collapsible Widgets</title>
+<style>
+  .widget {
+    margin-bottom: 10px;
+  }
+  .widget-header {
+    cursor: pointer;
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  .widget-content {
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+  }
+</style>
+</head>
+<body>
 
+<div class="widget">
+  <div class="widget-header" onclick="toggleWidget(1)">Widget 1</div>
+  <div class="widget-content" id="widget1">
+    Content of Widget 1
+  </div>
+</div>
+
+<div class="widget">
+  <div class="widget-header" onclick="toggleWidget(2)">Widget 2</div>
+  <div class="widget-content" id="widget2">
+    Content of Widget 2
+  </div>
+</div>
+
+<script>
+function toggleWidget(widgetNumber) {
+  var widget = document.getElementById('widget' + widgetNumber);
+  if (widget.style.display === 'none') {
+    widget.style.display = 'block';
+  } else {
+    widget.style.display = 'none';
+  }
+}
+</script>
+
+</body>
+</html>
